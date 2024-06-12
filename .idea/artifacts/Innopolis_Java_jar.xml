@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Innopolis_Java:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Innopolis_Java_jar</output-path>
+    <root id="archive" name="Innopolis_Java.jar">
+      <element id="module-output" name="Innopolis_Java" />
+    </root>
+  </artifact>
+</component>
