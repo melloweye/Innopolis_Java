@@ -7,9 +7,9 @@ public class Television {
     private double price;
 
     public Television(String make, int screenSize, double price) {
-        setMake(make);
-        setScreenSize(screenSize);
-        setPrice(price);
+        this.make = make;
+        this.screenSize = screenSize;
+        this.price = price;
     }
 
     public int getScreenSize() {

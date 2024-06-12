@@ -1,6 +1,5 @@
 package ru.innopolis.java.test.Lesson4.Task2;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task2 {
