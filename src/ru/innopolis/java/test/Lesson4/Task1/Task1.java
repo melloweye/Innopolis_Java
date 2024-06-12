@@ -10,7 +10,6 @@ public class Task1 {
         String ch = scan.next();
 
         int index = chars.indexOf(ch);
-        //System.out.println(index - 1); - это печатает индекс симвода в строке
 
         if (ch.equals("q")) { // замкнуть клавиатуру получилось только так
             System.out.println('m');

@@ -11,7 +11,7 @@ public class Task2 {
         String find2 = "<--<<";
         int lastIndex = 0;
         int counter = 0;
-
+        // отдельно сделал подстроки, проверил вхождение каждой  из них и объединил общим счетчиком
         while ((lastIndex = input.indexOf(find, lastIndex)) != -1) {
             counter++;
             lastIndex += find.length();

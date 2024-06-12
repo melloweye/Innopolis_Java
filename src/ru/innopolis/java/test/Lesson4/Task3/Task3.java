@@ -8,6 +8,7 @@ public class Task3 {
         Scanner scanner = new Scanner(System.in);
         String sampleString = scanner.nextLine();
 
+        // строку разбил на две подстроки, каждую отдельно отсортировал через массив, потом перевёл обратно в строку и вывел на печать
         String substring1 = sampleString.split(" ")[0];
         String substring2 = sampleString.split(" ")[1];
 
