@@ -14,8 +14,8 @@ public class App {
         products.add(new Product("Хлеб", 40));
         products.add(new Product("Молоко", 60));
         products.add(new Product("Торт", 1000));
-        products.add(new Product("Кофе растворимый", 40));
-        products.add(new Product("Масло", 40));
+        products.add(new Product("Кофе растворимый", 879));
+        products.add(new Product("Масло", 150));
         products.add(new Product("Мороженое", 200));
         products.add(new Product("Макароны", 800));
 
