@@ -5,10 +5,12 @@ import java.util.Objects;
 public class Product {
     private String productName;
     private double productPrice;
+    private boolean childSafe;
 
-    public Product(String productName, double productPrice) {
+    public Product(String productName, double productPrice, boolean childSafe) {
         this.productName = productName;
         this.productPrice = productPrice;
+        this.childSafe = childSafe;
     }
 
     public String getProductName() {
@@ -25,6 +27,10 @@ public class Product {
 
     public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
+    }
+
+    public boolean isChildSafe() {
+        return childSafe;
     }
 
     @Override

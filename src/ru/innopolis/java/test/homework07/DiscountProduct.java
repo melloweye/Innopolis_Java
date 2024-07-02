@@ -7,8 +7,8 @@ public class DiscountProduct extends Product {
     private double discount;
     private LocalDate discountEndDate;
 
-    public DiscountProduct(String name, double price, double discount, LocalDate discountEndDate) {
-        super(name, price);
+    public DiscountProduct(String name, double price, boolean childSafe, double discount, LocalDate discountEndDate) {
+        super(name, price, childSafe);
         this.discount = discount;
         this.discountEndDate = discountEndDate;
     }

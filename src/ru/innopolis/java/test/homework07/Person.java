@@ -4,15 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Person {
+public abstract class Person {
     private String name;
+    private int age;
     private double moneyCash;
     private List<Product> products;
 
-    public Person(String name, double moneyCash) {
+    public Person(String name, int age, double moneyCash) {
+        this.age = age;
         this.moneyCash = moneyCash;
         this.name = name;
         this.products = new ArrayList<>();
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getName() {
@@ -27,7 +37,7 @@ public class Person {
         return moneyCash;
     }
 
-    public void setMoneyCash(int moneyCash) {
+    public void setMoneyCash(double moneyCash) {
         this.moneyCash = moneyCash;
     }
 
@@ -39,15 +49,7 @@ public class Person {
         this.products = products;
     }
 
-    public void addProduct(Product product) {
-        if (moneyCash >= product.getProductPrice()) {
-            products.add(product);
-            moneyCash -= product.getProductPrice();
-            System.out.println(name + " купил " + product.getProductName());
-        } else {
-            System.out.println(name + " не может позволить себе " + product.getProductName());
-        }
-    }
+    public abstract void addProduct(Product product);
 
     @Override
     public boolean equals(Object o) {
