@@ -24,7 +24,9 @@ public class Television {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Television that)) return false;
-        return screenSize == that.screenSize && Double.compare(price, that.price) == 0 && currentChanel == that.currentChanel && currentVolume == that.currentVolume && isTurnedOn == that.isTurnedOn && Objects.equals(make, that.make);
+        return screenSize == that.screenSize && Double.compare(price, that.price) == 0 &&
+                currentChanel == that.currentChanel && currentVolume == that.currentVolume &&
+                isTurnedOn == that.isTurnedOn && Objects.equals(make, that.make);
     }
 
     @Override

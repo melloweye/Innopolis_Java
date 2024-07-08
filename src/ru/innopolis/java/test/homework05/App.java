@@ -1,12 +1,13 @@
 package ru.innopolis.java.test.homework05;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Television> televisionArrayList = new ArrayList<Television>();
+        List<Television> televisionArrayList = new ArrayList<>();
         String make = null;
         int screenSize = 0;
         double price = 0;
@@ -32,18 +33,6 @@ public class App {
             televisionArrayList.add(new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn));
         }
         scanner.close();
-
-        //получаем значения с клавиатуры
-        Television tv1 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv2 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv3 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv4 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv5 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv6 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv7 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv8 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv9 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
-        Television tv10 = new Television(make, screenSize, price, currentChanel, currentVolume, isTurnedOn);
 
         for (Television television : televisionArrayList) {
             if (television.isTurnedOn() && (television.getCurrentVolume() < maxVolume)) {
