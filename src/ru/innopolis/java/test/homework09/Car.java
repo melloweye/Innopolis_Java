@@ -81,12 +81,15 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Марка: " + make + "; "
-                + "год выпуска: " + year + "; "
-                + "мощность: " + horsePower + "; "
-                + "ускорение: " + acceleration + "; "
-                + "подвеска: " + suspension + "; "
-                + "долговечность: " + reliability + "; ";
+        return "Car{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                ", horsePower=" + horsePower +
+                ", acceleration=" + acceleration +
+                ", suspension=" + suspension +
+                ", reliability=" + reliability +
+                '}';
     }
 
     @Override
