@@ -1,4 +1,4 @@
-package ru.innopolis.java.test.homework07;
+package ru.innopolis.java.test.homework07.general;
 
 import java.util.Objects;
 

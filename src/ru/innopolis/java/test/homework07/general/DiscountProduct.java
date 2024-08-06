@@ -1,4 +1,4 @@
-package ru.innopolis.java.test.homework07;
+package ru.innopolis.java.test.homework07.general;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -13,17 +13,29 @@ public class DiscountProduct extends Product {
         this.discountEndDate = discountEndDate;
     }
 
-    @Override
-    public double getProductPrice() {
-        if (LocalDate.now().isBefore(discountEndDate)) {
-            return super.getProductPrice() - discount;
+    public double getDiscount() {
+        if (LocalDate.now().isAfter(discountEndDate)) {
+            return getProductPrice() * (1 - discount / 100);
+        } else {
+            return getProductPrice();
         }
-        return super.getProductPrice();
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    public LocalDate getDiscountEndDate() {
+        return discountEndDate;
+    }
+
+    public void setDiscountEndDate(LocalDate discountEndDate) {
+        this.discountEndDate = discountEndDate;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " (скидка: " + discount + ", до: " + discountEndDate + ")";
+        return super.toString() + " (скидка: " + discount + "%, до: " + discountEndDate + ")";
     }
 
     @Override

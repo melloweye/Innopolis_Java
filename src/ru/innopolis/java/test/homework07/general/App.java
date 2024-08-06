@@ -1,4 +1,4 @@
-package ru.innopolis.java.test.homework07;
+package ru.innopolis.java.test.homework07.general;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -77,7 +77,7 @@ public class App {
             if (person != null && product != null) {
                 person.addProduct(product);
             } else {
-                System.out.println("Неверные данные. Проверьте правилность и повторите ввод");
+                System.out.println("Неверные данные. Проверьте правильность и повторите ввод");
             }
         }
 
