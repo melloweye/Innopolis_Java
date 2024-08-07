@@ -48,6 +48,6 @@ public class Adult extends Person {
 
     @Override
     public String toString() {
-        return getName() + " ничего не купил, потому что покупка в кредит не доступна.";
+        return getName() + " купил " + getProducts() + " в кредит ";
     }
 }
