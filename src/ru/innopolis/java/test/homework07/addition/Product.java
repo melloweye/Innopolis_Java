@@ -1,4 +1,4 @@
-package ru.innopolis.java.test.homework07;
+package ru.innopolis.java.test.homework07.addition;
 
 import java.util.Objects;
 
@@ -47,6 +47,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return productName + ", " + productPrice;
+        return productName + " - " + productPrice;
     }
 }

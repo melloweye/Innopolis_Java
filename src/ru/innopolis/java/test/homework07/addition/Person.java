@@ -1,8 +1,9 @@
-package ru.innopolis.java.test.homework07;
+package ru.innopolis.java.test.homework07.addition;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public abstract class Person {
     private String name;
@@ -10,7 +11,7 @@ public abstract class Person {
     private double moneyCash;
     private List<Product> products;
 
-    public Person(String name, int age, double moneyCash) {
+    public Person(String name, double moneyCash, int age) {
         this.age = age;
         this.moneyCash = moneyCash;
         this.name = name;
@@ -49,7 +50,12 @@ public abstract class Person {
         this.products = products;
     }
 
-    public abstract void addProduct(Product product);
+    public void addProduct(Product product) {
+        products.add(product);
+        moneyCash -= product.getProductPrice();
+    }
+
+    public abstract boolean canBuyProduct(Product product);
 
     @Override
     public boolean equals(Object o) {
@@ -65,6 +71,10 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return name + ": " + (products.isEmpty() ? "Ничего не куплено" : products.toString().replace("[", "").replace("]", ""));
+        StringJoiner joiner = new StringJoiner(", ");
+        for (Product product : products) {
+            joiner.add(product.getProductName());
+        }
+        return name + " - " + (products.isEmpty() ? "Ничего не куплено" : joiner.toString());
     }
 }
