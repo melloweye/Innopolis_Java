@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class Person {
     private String name;
@@ -67,16 +68,10 @@ public class Person {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(name).append(" - ");
-        if (products.isEmpty()) {
-            sb.append("Ничего не куплено");
-        } else {
-            for (Product product : products) {
-                sb.append(product.getProductName()).append(", ");
-            }
-            sb.setLength(sb.length() - 2);
+        StringJoiner joiner = new StringJoiner(", ");
+        for (Product product : products) {
+            joiner.add(product.getProductName());
         }
-        return sb.toString();
+        return name + " - " + (products.isEmpty() ? "Ничего не куплено" : joiner.toString());
     }
 }
