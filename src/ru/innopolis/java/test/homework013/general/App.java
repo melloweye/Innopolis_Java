@@ -10,8 +10,8 @@ public class App {
     public static void main(String[] args) {
 
         List<String> shoppingRequest = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/ru/innopolis/java/test/homework013/Input.txt"));
-             BufferedWriter writer = new BufferedWriter(new FileWriter("src/ru/innopolis/java/test/homework013/Output.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/ru/innopolis/java/test/homework013/general/Input.txt"));
+             BufferedWriter writer = new BufferedWriter(new FileWriter("src/ru/innopolis/java/test/homework013/general/Output.txt"))) {
             String line;
 
             List<Person> persons = readPersonsFromLine(reader);
