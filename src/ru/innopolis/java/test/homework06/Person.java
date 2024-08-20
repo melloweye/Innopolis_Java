@@ -1,17 +1,16 @@
 package ru.innopolis.java.test.homework06;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Person {
     private String personName;
     private int hasMoney;
-    private List<String> shoppingCart = new ArrayList<>();
+    private List<Product> shoppingCart;
 
     public Person(String personName, int hasMoney) {
         this.personName = personName;
         this.hasMoney = hasMoney;
+        this.shoppingCart = new ArrayList<>();
     }
 
     public String getPersonName() {
@@ -30,16 +29,17 @@ public class Person {
         this.hasMoney = hasMoney;
     }
 
-    public List<String> getShoppingCart() {
+    public List<Product> getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(List<String> shoppingCart) {
+    public void setShoppingCart(List<Product> shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 
-    public void addShoppingCart(String shoppingCart) {
-        this.shoppingCart.add(shoppingCart);
+    public void addToShoppingCart(Product product) {
+        this.shoppingCart.add(product);
+        this.hasMoney -= product.getPrice();
     }
 
     @Override
@@ -56,11 +56,11 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + personName + '\'' +
-                ", hasMoney=" + hasMoney +
-                ", products=" + shoppingCart +
-                '}';
+        StringJoiner joiner = new StringJoiner(", ");
+        for (Product product : shoppingCart) {
+            joiner.add(product.getName());
+        }
+        return personName + " - " + (shoppingCart.isEmpty() ? "Ничего не куплено" : joiner.toString());
     }
 }
 
