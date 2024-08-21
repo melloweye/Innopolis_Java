@@ -90,7 +90,7 @@ public class App {
     }
 
     // метод для создания покупателя из строки, колученной из консоли
-    private static Person createPersonFromInput (String inputString) {
+    static Person createPersonFromInput(String inputString) {
         int lastIndex = inputString.lastIndexOf(" ");
         if (lastIndex == -1) {
             throw new IllegalArgumentException("Неверный формат ввода. Ожидается имя покупателя и сумма денег");
@@ -105,7 +105,7 @@ public class App {
     }
 
     // метод для создания продукта из строки, полученной из консоли
-    private static Product createProductFromInput (String inputString) {
+    static Product createProductFromInput (String inputString) {
         int lastIndex = inputString.lastIndexOf(" ");
         if (lastIndex == -1) {
             throw new IllegalArgumentException("Неверный формат ввода. Ожидается название продукта и его стоимость");
@@ -120,7 +120,7 @@ public class App {
     }
 
     // обработка процедуры покупки. сделал в формате: покупатель - продукт
-    private static void purchaseProduct(List<Person> people, List<Product> products, String inputString) {
+    static void purchaseProduct(List<Person> people, List<Product> products, String inputString) {
         String[] parts = inputString.split(" - ");
 
         String personName = parts[0];
@@ -145,7 +145,7 @@ public class App {
     }
 
     // проверка, что имя не пустое
-    private static void validatePersonName(String personName) {
+    static void validatePersonName(String personName) {
         if (personName.isEmpty()) {
             throw new IllegalArgumentException("Имя не может быть пустым");
         }
@@ -159,7 +159,7 @@ public class App {
     }
 
     // проверка, что название продукта не пустое
-    public static void validateProductName (String productName) {
+    static void validateProductName (String productName) {
         if (productName.isEmpty()) {
             throw new IllegalArgumentException("Название продукта не может быть пустым");
         }
