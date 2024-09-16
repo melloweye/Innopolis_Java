@@ -1,9 +1,11 @@
 package ru.innopolis.java.test.homework09;
 
+import ru.innopolis.java.test.homework09.car.Car;
+import ru.innopolis.java.test.homework09.race.*;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -17,31 +19,35 @@ public class App {
 
     public static List<Race> readRacesFromFile(String fileName) throws IOException {
         List<Race> races = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(fileName))) {
-            while (scanner.hasNext()) {
-                String type = scanner.next();
-                int length = scanner.nextInt();
-                String route = scanner.next();
-                int prize = scanner.nextInt();
-                int numCompetitors = scanner.nextInt();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] tokens = line.split("\\s+");
+                int index = 0;
+                String type = tokens[index++];
+                int length = Integer.parseInt(tokens[index++]);
+                String route = tokens[index++];
+                int prize = Integer.parseInt(tokens[index++]);
+                int numCompetitors = Integer.parseInt(tokens[index++]);
+
                 Car[] cars = new Car[numCompetitors];
                 for (int i = 0; i < numCompetitors; i++) {
-                    String make = scanner.next();
-                    String model = scanner.next();
-                    int year = scanner.nextInt();
-                    int horsePower = scanner.nextInt();
-                    int acceleration = scanner.nextInt();
-                    int suspension = scanner.nextInt();
-                    int reliability = scanner.nextInt();
-                    cars[i] = new Car(make, model, year, horsePower, acceleration, suspension, reliability);
+                    String caeBrand = tokens[index++];
+                    String carModel = tokens[index++];
+                    int year = Integer.parseInt(tokens[index++]);
+                    int horsePower = Integer.parseInt(tokens[index++]);
+                    int acceleration = Integer.parseInt(tokens[index++]);
+                    int suspension = Integer.parseInt(tokens[index++]);
+                    int reliability = Integer.parseInt(tokens[index++]);
+                    cars[i] = new Car(caeBrand, carModel, year, horsePower, acceleration, suspension, reliability);
                 }
                 switch (type) {
                     case "TimeLimitRace":
-                        int goldTime = scanner.nextInt();
+                        int goldTime = Integer.parseInt(tokens[index++]);
                         races.add(new TimeLimitRace(length, route, prize, cars, goldTime));
                         break;
                     case "CircuitRace":
-                        int laps = scanner.nextInt();
+                        int laps = Integer.parseInt(tokens[index++]);
                         races.add(new CircuitRace(length, route, prize, cars, laps));
                         break;
                     case "CasualRace":

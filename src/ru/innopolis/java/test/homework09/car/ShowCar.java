@@ -1,12 +1,12 @@
-package ru.innopolis.java.test.homework09;
+package ru.innopolis.java.test.homework09.car;
 
 import java.util.Objects;
 
 public class ShowCar extends Car {
     private int stars = 0;
 
-    public ShowCar(String make, String model, int year, int horsePower, int acceleration, int suspension, int reliability, int stars) {
-        super(make, model, year, horsePower, acceleration, suspension, reliability);
+    public ShowCar(String carBrand, String carModel, int year, int horsePower, int acceleration, int suspension, int reliability, int stars) {
+        super(carBrand, carModel, year, horsePower, acceleration, suspension, reliability);
         this.stars = stars;
     }
 

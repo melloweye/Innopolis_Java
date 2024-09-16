@@ -1,6 +1,7 @@
-package ru.innopolis.java.test.homework09;
+package ru.innopolis.java.test.homework09.race;
 
-import java.util.ArrayList;
+import ru.innopolis.java.test.homework09.car.Car;
+
 import java.util.Arrays;
 import java.util.Objects;
 

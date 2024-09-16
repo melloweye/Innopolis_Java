@@ -1,8 +1,8 @@
 package ru.innopolis.java.test.homework09;
 
-import java.util.ArrayList;
+import ru.innopolis.java.test.homework09.car.Car;
+
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 public class Garage {

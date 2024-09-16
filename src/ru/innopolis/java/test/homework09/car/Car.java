@@ -1,19 +1,19 @@
-package ru.innopolis.java.test.homework09;
+package ru.innopolis.java.test.homework09.car;
 
 import java.util.Objects;
 
 public class Car {
-    private String make;
-    private String model;
+    private String carBrand;
+    private String carModel;
     private int year;
     private int horsePower;
     private int acceleration;
     private int suspension;
     private int reliability;
 
-    public Car(String make, String model, int year, int horsePower, int acceleration, int suspension, int reliability) {
-        this.make = make;
-        this.model = model;
+    public Car(String carBrand, String carModel, int year, int horsePower, int acceleration, int suspension, int reliability) {
+        this.carBrand = carBrand;
+        this.carModel = carModel;
         this.year = year;
         this.horsePower = horsePower;
         this.acceleration = acceleration;
@@ -23,20 +23,20 @@ public class Car {
 
     public Car() {}
 
-    public String getMake() {
-        return make;
+    public String getCarBrand() {
+        return carBrand;
     }
 
-    public void setMake(String make) {
-        this.make = make;
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
     }
 
-    public String getModel() {
-        return model;
+    public String getCarModel() {
+        return carModel;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setCarModel(String carModel) {
+        this.carModel = carModel;
     }
 
     public int getYear() {
@@ -82,8 +82,8 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "make='" + make + '\'' +
-                ", model='" + model + '\'' +
+                "make='" + carBrand + '\'' +
+                ", model='" + carModel + '\'' +
                 ", year=" + year +
                 ", horsePower=" + horsePower +
                 ", acceleration=" + acceleration +
@@ -96,11 +96,11 @@ public class Car {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Car car)) return false;
-        return year == car.year && horsePower == car.horsePower && acceleration == car.acceleration && suspension == car.suspension && reliability == car.reliability && Objects.equals(make, car.make) && Objects.equals(model, car.model);
+        return year == car.year && horsePower == car.horsePower && acceleration == car.acceleration && suspension == car.suspension && reliability == car.reliability && Objects.equals(carBrand, car.carBrand) && Objects.equals(carModel, car.carModel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(make, model, year, horsePower, acceleration, suspension, reliability);
+        return Objects.hash(carBrand, carModel, year, horsePower, acceleration, suspension, reliability);
     }
 }

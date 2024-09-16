@@ -1,4 +1,6 @@
-package ru.innopolis.java.test.homework09;
+package ru.innopolis.java.test.homework09.race;
+
+import ru.innopolis.java.test.homework09.car.Car;
 
 public class DragRace extends Race {
     public DragRace(int length, String route, int prize, Car[] competitorCars) {
